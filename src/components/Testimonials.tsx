@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -15,44 +14,40 @@ gsap.registerPlugin(ScrollTrigger);
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    position: "Fashion Boutique Owner",
-    company: "Style Elegance",
-    image: "/images/me.jpg", // Using placeholder image
-    content: "Blessing transformed our brand's visual identity with her graphic design skills. Our social media presence has never looked more professional and cohesive. Her eye for design and understanding of our brand voice resulted in visuals that truly represent who we are.",
+    name: "Usman Imanah",
+    position: "CEO",
+    company: "Friska Life",
+    content: "Blessing’s strategic thinking in our digital marketing efforts—especially campaign planning, content execution, and website optimization—made a real impact. She consistently delivered value and showed a deep understanding of what drives engagement in the wellness space.",
     rating: 5,
-    service: "Graphic Design"
+    service: "Digital Marketing Strategy"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    position: "Tech Startup Founder",
-    company: "InnovateTech",
-    image: "/images/me.jpg", // Using placeholder image
-    content: "The video content Blessing created for our product launch generated more engagement than all our previous campaigns combined. Her editing skills are top-notch! She took our raw footage and transformed it into compelling stories that resonated with our audience.",
+    name: "Peter Ubong",
+    position: "Brand Manager",
+    company: "Friska Life",
+    content: "Working with Blessing on the Friska project elevated our brand presence significantly. Her approach to strategy and execution was top-notch, bringing clarity and results to our campaigns.",
     rating: 5,
-    service: "Video Editing"
+    service: "Brand Strategy & Execution"
   },
   {
     id: 3,
-    name: "Jessica Rodriguez",
-    position: "E-commerce Director",
-    company: "Urban Market",
-    image: "/images/me.jpg", // Using placeholder image
-    content: "Blessing's paid advertising strategy doubled our conversion rate while actually reducing our ad spend. The ROI has been incredible and we couldn't be happier. Her data-driven approach to targeting and optimization made all the difference.",
+    name: "Fatimah A.",
+    position: "Founder",
+    company: "Ameeyah Peanuts",
+    content: "Our distribution ads gained real traction with Blessing’s help. She guided us to reach the right audience fast and efficiently.",
     rating: 5,
-    service: "Paid Advertising"
+    service: "Paid Ads Management"
   },
   {
     id: 4,
-    name: "David Williams",
-    position: "Marketing Manager",
-    company: "Wellness Collective",
-    image: "/images/me.jpg", // Using placeholder image
-    content: "Blessing is a true professional who goes above and beyond. Her strategic insights and creative approach to our social media campaigns have helped us reach new audiences and grow our community significantly. I highly recommend her services.",
+    name: "Peter Ubong",
+    position: "Managing Partner",
+    company: "Eporte Digital Marketing Agency",
+    content: "From content planning to daily execution, Blessing managed our digital presence with excellence. Her consistency and creativity kept our audience engaged and our platforms active.",
     rating: 5,
-    service: "Social Media Strategy"
-  },
+    service: "Social Media Management"
+  }
 ];
 
 export default function Testimonials() {
@@ -166,14 +161,14 @@ export default function Testimonials() {
               
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="flex items-center">
-                  <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20 mr-4">
+                  {/* <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20 mr-4">
                     <Image
                       src={testimonials[activeIndex].image}
                       alt={testimonials[activeIndex].name}
                       fill
                       className="object-cover"
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <h4 className="font-semibold">{testimonials[activeIndex].name}</h4>
                     <p className="text-sm text-foreground/70">

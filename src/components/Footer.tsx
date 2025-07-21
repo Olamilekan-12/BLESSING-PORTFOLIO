@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { Instagram, Linkedin, Heart } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -18,6 +19,7 @@ const navLinks = [
 const socialLinks = [
   { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/bellaoghie/#" },
   { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/blessing-oghie/" },
+  { name: "Whatsapp", icon: FaWhatsapp, url: "https://wa.link/yk7qtj" },
 ];
 
 export default function Footer() {

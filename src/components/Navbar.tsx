@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { Menu, X, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Menu, X, Instagram, Linkedin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { gsap } from "gsap";
 
 const navLinks = [
@@ -15,9 +16,9 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { name: "Instagram", icon: Instagram, url: "https://instagram.com" },
-  { name: "Twitter", icon: Twitter, url: "https://twitter.com" },
-  { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/bellaoghie/#" },
+  { name: "Whatsapp", icon: FaWhatsapp, url: "https://wa.link/yk7qtj" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/blessing-oghie/" },
 ];
 
 export default function Navbar() {

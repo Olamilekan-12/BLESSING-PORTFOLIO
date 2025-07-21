@@ -4,7 +4,8 @@ import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Mail, Phone, MapPin, Send, Instagram, Twitter, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 // Register ScrollTrigger plugin
@@ -32,9 +33,9 @@ const contactInfo = [
 ];
 
 const socialLinks = [
-  { name: "Instagram", icon: Instagram, url: "https://instagram.com" },
-  { name: "Twitter", icon: Twitter, url: "https://twitter.com" },
-  { name: "LinkedIn", icon: Linkedin, url: "https://linkedin.com" },
+  { name: "Instagram", icon: Instagram, url: "https://www.instagram.com/bellaoghie/#" },
+  { name: "Whatsapp", icon: FaWhatsapp, url: "https://wa.link/yk7qtj" },
+  { name: "LinkedIn", icon: Linkedin, url: "https://www.linkedin.com/in/blessing-oghie/" },
 ];
 
 export default function Contact() {

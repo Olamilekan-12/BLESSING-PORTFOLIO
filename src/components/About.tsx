@@ -130,7 +130,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="about-content">
             <p className="text-lg mb-6 text-foreground/80">
-              Hello! I&apos;m Blessing Oghie, a passionate Social Media Manager with over 5 years of experience helping brands build meaningful connections with their audiences through strategic social media management.
+              Hello! I&apos;m Blessing Oghie, a passionate Social Media Manager with over 3 years of experience helping brands build meaningful connections with their audiences through strategic social media management.
             </p>
             
             <p className="text-lg mb-6 text-foreground/80">
@@ -150,7 +150,9 @@ export default function About() {
             </div>
             
             <Button size="lg" className="group">
-              Download Resume
+              <a href="/cv.pdf" download>
+                Download Resume
+              </a>
             </Button>
           </div>
           
