@@ -228,11 +228,30 @@ export default function Hero() {
             and drive meaningful results through strategic social media management.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 hero-buttons">
-            <Button size="lg" className="btn">
+            <Button 
+              size="lg" 
+              className="btn"
+              onClick={() => {
+                const section = document.getElementById('contact');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Get Started
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button size="lg" variant="outline" className="btn">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="btn"
+              onClick={() => {
+                const section = document.getElementById('portfolio');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               View My Work
             </Button>
           </div>
