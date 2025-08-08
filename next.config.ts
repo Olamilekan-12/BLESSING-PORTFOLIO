@@ -5,7 +5,16 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ['three'],
   images: {
-    domains: ['images.unsplash.com', 'img.youtube.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'img.youtube.com',
+      },
+    ],
   },
 };
 
