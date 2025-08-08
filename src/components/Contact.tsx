@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Mail, Phone, MapPin, Send, Instagram, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Instagram, Linkedin, Loader2 } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
@@ -40,7 +40,66 @@ const socialLinks = [
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
-  
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [status, setStatus] = useState<{ type: 'success' | 'error' | null; message: string | null }>({ type: null, message: null });
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setStatus({ type: null, message: null });
+
+    const form = e.currentTarget;
+    
+    try {
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('name') as string,
+        email: formData.get('email') as string,
+        subject: formData.get('subject') as string,
+        message: formData.get('message') as string,
+      };
+
+      // Using EmailJS for form submission
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          service_id: 'service_kq661hm', // Your EmailJS service ID
+          template_id: 'template_41g6e2t', // Your EmailJS template ID
+          user_id: 'KlQOUK5nowVy7p8iK', // Your EmailJS public key
+          template_params: {
+            from_name: data.name,
+            from_email: data.email,
+            to_email: 'blessingoghie@outlook.com',
+            subject: `New Contact: ${data.subject}`,
+            message: data.message,
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message. Please try again later.');
+      }
+
+      setStatus({ 
+        type: 'success', 
+        message: 'Your message has been sent successfully! I\'ll get back to you soon.' 
+      });
+      form.reset();
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setStatus({
+        type: 'error',
+        message: error instanceof Error ? error.message : 'Failed to send message. Please try again later.',
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   useGSAP(() => {
     // Animate section title
     gsap.fromTo(
@@ -148,7 +207,7 @@ export default function Contact() {
           <div className="contact-form bg-background rounded-xl p-8 shadow-lg border border-border/50">
             <h4 className="text-xl font-semibold mb-6">Send a Message</h4>
             
-            <form className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium mb-2">
@@ -157,6 +216,7 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
                     className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                     placeholder="John Doe"
                     required
@@ -169,6 +229,7 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                     placeholder="john@example.com"
                     required
@@ -183,6 +244,7 @@ export default function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
                   className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                   placeholder="How can I help you?"
                   required
@@ -195,6 +257,7 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
                   rows={5}
                   className="w-full px-4 py-3 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
                   placeholder="Tell me about your project..."
@@ -202,10 +265,35 @@ export default function Contact() {
                 ></textarea>
               </div>
               
-              <Button type="submit" size="lg" className="w-full sm:w-auto group">
-                Send Message
-                <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
+              <div className="space-y-4">
+                {status.message && (
+                  <div className={`p-4 rounded-md ${
+                    status.type === 'success' 
+                      ? 'bg-green-100 text-green-800 border border-green-200' 
+                      : 'bg-red-100 text-red-800 border border-red-200'
+                  }`}>
+                    {status.message}
+                  </div>
+                )}
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="w-full sm:w-auto group"
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <Send className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </>
+                  )}
+                </Button>
+              </div>
             </form>
           </div>
           
@@ -260,7 +348,7 @@ export default function Contact() {
               
               <div className="mt-8 p-6 bg-background rounded-xl border border-border/50 shadow-md">
                 <h5 className="font-medium mb-2">Working Hours</h5>
-                <p className="text-foreground/70">Monday - Friday: 9am - 5pm EST</p>
+                <p className="text-foreground/70">Monday - Friday: 9am - 5pm WAT</p>
                 <p className="text-foreground/70">Weekend: By appointment</p>
               </div>
             </div>

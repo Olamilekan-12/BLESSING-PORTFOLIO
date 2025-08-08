@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   transpilePackages: ['three'],
   images: {
-    domains: ['images.unsplash.com'],
+    domains: ['images.unsplash.com', 'img.youtube.com'],
   },
 };
 

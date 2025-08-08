@@ -17,7 +17,7 @@ const testimonials = [
     name: "Usman Imanah",
     position: "CEO",
     company: "Friska Life",
-    content: "Blessing’s strategic thinking in our digital marketing efforts—especially campaign planning, content execution, and website optimization—made a real impact. She consistently delivered value and showed a deep understanding of what drives engagement in the wellness space.",
+    content: "Blessing's strategic thinking in our digital marketing efforts, especially campaign planning, content execution, and website optimization, made a real impact. She consistently delivered value and showed a deep understanding of what drives engagement in the wellness space.",
     rating: 5,
     service: "Digital Marketing Strategy"
   },
@@ -142,7 +142,7 @@ export default function Testimonials() {
             What My Clients Say
           </h3>
           <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
-            Don&apos;t just take my word for it—hear what clients have to say about working with me.
+            Don&apos;t just take my word for it, hear what clients have to say about working with me.
           </p>
         </div>
 
