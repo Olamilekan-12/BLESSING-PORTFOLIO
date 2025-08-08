@@ -218,14 +218,15 @@ export default function Hero() {
         {/* Hero Text */}
         <div className="order-2 lg:order-1">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] hero-title">
-            {splitTextIntoSpans("Elevate Your Social Media Presence")}
+            {splitTextIntoSpans("Grow Your Brand")}
+            <span className="whitespace-nowrap">{splitTextIntoSpans("Online")}</span>
           </h1>
           <p className="text-xl md:text-2xl font-medium mt-4 text-primary hero-subtitle">
-            Social Media Management & Strategy
+            Digital Marketing & Social Media Strategy
           </p>
           <p className="mt-6 text-foreground/70 hero-description">
             I help brands and individuals create engaging content, build authentic connections, 
-            and drive meaningful results through strategic social media management.
+            and drive meaningful results through strategic digital marketing and social media management.
           </p>
           <div className="mt-8 flex flex-wrap gap-4 hero-buttons">
             <Button 
@@ -261,7 +262,7 @@ export default function Hero() {
         <div className="order-1 lg:order-2 relative hero-image-container">
           <div className="relative w-full aspect-square max-w-md mx-auto">
             <Image 
-              src="/images/me.jpg" 
+              src="/images/DSC_2469.jpg" 
               alt="Blessing Oghie" 
               fill
               className="object-cover rounded-2xl shadow-2xl"

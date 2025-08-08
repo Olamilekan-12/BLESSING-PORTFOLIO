@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Gradient -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#grad1)" />
+  
+  <!-- Laptop Frame -->
+  <rect x="150" y="50" width="500" height="300" rx="10" fill="#1E1B4B" />
+  <rect x="300" y="350" width="200" height="10" rx="5" fill="#312E81" />
+  <rect x="350" y="360" width="100" height="10" rx="5" fill="#312E81" />
+  
+  <!-- Screen Content -->
+  <rect x="170" y="70" width="460" height="260" fill="#EFF6FF" />
+  
+  <!-- Browser Bar -->
+  <rect x="170" y="70" width="460" height="40" fill="#1E40AF" />
+  <circle cx="190" cy="90" r="6" fill="#EF4444" />
+  <circle cx="210" cy="90" r="6" fill="#F59E0B" />
+  <circle cx="230" cy="90" r="6" fill="#10B981" />
+  
+  <!-- Hero Section -->
+  <rect x="200" y="130" width="400" height="20" rx="4" fill="#1E40AF" fill-opacity="0.2" />
+  <rect x="200" y="160" width="300" height="12" rx="4" fill="#1E40AF" fill-opacity="0.2" />
+  <rect x="200" y="180" width="350" height="12" rx="4" fill="#1E40AF" fill-opacity="0.2" />
+  
+  <!-- CTA Button -->
+  <rect x="200" y="220" width="120" height="40" rx="20" fill="#4F46E5" />
+  
+  <!-- Feature Icons -->
+  <circle cx="400" cy="150" r="8" fill="#4F46E5" />
+  <circle cx="450" cy="150" r="8" fill="#4F46E5" />
+  <circle cx="500" cy="150" r="8" fill="#4F46E5" />
+  
+  <!-- Decorative Elements -->
+  <circle cx="100" cy="100" r="30" fill="#A78BFA" fill-opacity="0.2" />
+  <circle cx="700" cy="400" r="40" fill="#A78BFA" fill-opacity="0.2" />
+  <circle cx="100" cy="400" r="20" fill="#A78BFA" fill-opacity="0.2" />
+  
+  <!-- Floating Elements -->
+  <circle cx="750" cy="80" r="10" fill="#F59E0B" fill-opacity="0.8" />
+  <circle cx="50" cy="450" r="15" fill="#10B981" fill-opacity="0.8" />
+  <rect x="700" y="30" width="30" height="30" rx="15" fill="#EC4899" fill-opacity="0.8" transform="rotate(45 715 45)" />
+  
+  <!-- Text -->
+  <text x="400" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#1E40AF">LANDING PAGE</text>
+  <text x="400" y="245" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="white">GET STARTED</text>
+</svg>

@@ -19,7 +19,9 @@ const skills = [
   "Analytics & Reporting",
   "Paid Social Campaigns",
   "Brand Voice Development",
-  "Crisis Management"
+  "Crisis Management",
+  "Email Marketing & Funnel Strategy",
+  "SEO & SEM"
 ];
 
 export default function About() {
@@ -123,18 +125,26 @@ export default function About() {
             About Me
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold leading-[1.2]">
-            Social Media Expert & Content Strategist
+            Digital Marketer & Social Media Strategist
           </h3>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="about-content">
             <p className="text-lg mb-6 text-foreground/80">
-              Hello! I&apos;m Blessing Oghie, a passionate Social Media Manager with over 3 years of experience helping brands build meaningful connections with their audiences through strategic social media management.
+              Hi, I&apos;m Blessing Oghie, a passionate Social Media Manager and Digital Marketer with over 3 years of experience helping brands grow online.
             </p>
             
             <p className="text-lg mb-6 text-foreground/80">
-              My approach combines creative content creation, data-driven strategy, and authentic community engagement to help brands stand out in today&apos;s crowded digital landscape. I believe that successful social media isn&apos;t just about posting content—it&apos;s about creating conversations that convert.
+              I specialise in helping brands and individuals build authentic connections, boost engagement, and drive meaningful results through a blend of strategic social media management and digital marketing execution.
+            </p>
+            
+            <p className="text-lg mb-6 text-foreground/80">
+              My approach combines creative content creation, paid media, analytics, and community-building with digital strategies that align with brand goals, whether it&apos;s increasing visibility, generating leads, or driving conversions.
+            </p>
+            
+            <p className="text-lg mb-6 text-foreground/80">
+              I believe digital success isn&apos;t just about being online, it&apos;s about being intentional, relatable, and result-driven.
             </p>
             
             <div className="mb-8">
@@ -150,7 +160,7 @@ export default function About() {
             </div>
             
             <Button size="lg" className="group">
-              <a href="/cv.pdf" download>
+              <a href="/Blessing .O Oghie .pdf" download>
                 Download Resume
               </a>
             </Button>

@@ -126,11 +126,10 @@ export default function Services() {
             What I Offer
           </h2>
           <h3 className="text-3xl md:text-4xl font-bold leading-tight">
-            Social Media Services
+            Social Media & Digital Marketing Services
           </h3>
           <p className="mt-4 text-foreground/70 max-w-2xl mx-auto">
-            Comprehensive social media management services to elevate your brand&apos;s online presence
-            and connect with your audience in meaningful ways.
+            Comprehensive, results-driven services that combine social media management with digital marketing strategy to elevate your brand&apos;s online presence and connect with your audience in meaningful ways.
           </p>
         </div>
 

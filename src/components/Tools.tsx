@@ -62,9 +62,9 @@ const tools = [
     color: "#9999FF"
   },
   {
-    name: "Make (Integromat)",
+    name: "Notion",
     icon: Zap,
-    category: "Automation",
+    category: "Organization",
     color: "#6366F1"
   },
   {
